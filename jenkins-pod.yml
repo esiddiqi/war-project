@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jenkins-pod
+  labels:
+    app: jenkins
+spec:
+  containers:
+    - image: jenkins/jenkins:latest
+      name: jenkins-container
+      ports:
+      - containerPort: 8080
+
+#  aws eks --region us-west-1 update-kubeconfig --name ems-eks-cluster
+#  aws configure list
+#  aws sts get-caller-identity
+#  aws eks update-kubeconfig --name=ems-eks-cluster
+#  kubectl create -f jenkins-service.yml
+#  kubectl port-forward service/jenkins-service 8080:8080
+# if using loadBalencer Service  https://aaff4b3835583417f8bd09ceb84a0229-22481623.us-west-1.elb.amazonaws.com:8080
+#  kubectl exec -it jenkins-pod -- cat /var/jenkins_home/secrets/initialAdminPassword
+
+
